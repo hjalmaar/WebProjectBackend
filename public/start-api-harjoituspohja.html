@@ -73,10 +73,10 @@
         <pre><code>
           # Get all users (requires token)
           GET http://127.0.0.1:3000/api/users
-          
+
           # Get user by id (requires token)
           GET http://127.0.0.1:3000/api/users/:id
-          
+
           # Delete user (requires token)
           DELETE http://127.0.0.1:3000/api/users/:id
           </code></pre>
@@ -109,11 +109,11 @@
         </p>
 
         <pre><code>
-          
+
           # Update user's own data (requires token)
           PUT http://127.0.0.1:3000/api/users/
           content-type: application/json
-          
+
           {
             "username": "test-update4",
             "password": "test-pw-update4",
@@ -133,11 +133,11 @@
 
     <dialog class="info_dialog">
       <p>
-        <!-- tänne haetaan yksittäinen valittu käyttäjät -->      
+        <!-- tänne haetaan yksittäinen valittu käyttäjät -->
         <div>UserID: <span>Id</span></div>
         <div>UserName: <span>Username</span></div>
         <div>Email: <span>Email</span></div>
-        <div>Role: <span>Role</span></div> 
+        <div>Role: <span>Role</span></div>
       </p>
       <button autofocus>Close</button>
     </dialog>
@@ -150,7 +150,8 @@
       GET http://localhost:3000/api/entries/:id
     </pre>
     <button class="get_entry">Hae (user:1) entries</button>
-
+
+
 
   </body>
 </html>
