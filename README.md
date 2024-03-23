@@ -2,7 +2,7 @@
 
 **Node.js + Express** application.
 
-(Check week/feature branches too.)
+
 
 ## Usage
 

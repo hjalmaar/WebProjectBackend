@@ -2,29 +2,16 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/api/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <script type="module" crossorigin src="/api/assets/index-CyqjRjXa.js"></script>
-    <link rel="modulepreload" crossorigin href="/api/assets/fetch-ZGf-g78y.js">
-    <link rel="stylesheet" crossorigin href="/api/assets/fetch-Ce31f6xP.css">
+    <script type="module" crossorigin src="/assets/index-DNbKFhBc.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/fetch-ZGf-g78y.js">
+    <link rel="stylesheet" crossorigin href="/assets/fetch-Ce31f6xP.css">
   </head>
 
   <body>
-    <h3>/api/users - CREATE USER</h3>
-
-    <pre><code>
-      # Create user
-      POST http://127.0.0.1:3000/api/users
-      content-type: application/json
-      
-      {
-        "username": "test-update4",
-        "password": "test-pw-update4",
-        "email": "update4@example.com"
-      }
-      </code></pre>
-
+    <h3>Register to be a user if you are not already</h3>
     <form class="create_user_form">
       <label for="username">Username</label>
       <input type="text" name="username" placeholder="test-update4" />
@@ -34,12 +21,12 @@
       <input type="email" name="email" placeholder="update4@example.com" />
       <input name="submit" type="submit" value="Post and log to console" class="createuser" />
     </form>
-    <h3>/api/auth - LOGIN USER</h3>
+    <h3>Login if you already have a user</h3>
     <pre><code>
       # Login
       POST http://localhost:3000/api/auth/login
       content-type: application/json
-      
+
       {
         "username": "user",
         "password": "secret"
@@ -75,5 +62,6 @@
       <code id="clearResponse"></code>
     </div>
   </body>
-
+
+
 </html>
