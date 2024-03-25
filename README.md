@@ -2,6 +2,10 @@
 
 **Node.js + Express** application. Health diary application built with chat gpt and the teachers examples. Where you can register and log in. As a authorized user you can search all users but only delete logged in user. Also as an authorized user you can add diary entries, edit and delete. Same is for medication entry. In the bottom user can update their user data. In the update user will go through prompts to update their data. To note the virtual machine is in a subfolder that's why the routes go /api/api. Added route for medications with minimal authorization on server side.
 
+Linkki äppiin:
+
+[Linkki](https://helmar.northeurope.cloudapp.azure.com/api/)
+
 
 ## Bugs and betterments
 When updating entry data it will throw an error on screen but will most likely still update the data. The entry table will only update when refreshing the window. The medication data should work without updating. Logout button will throw an error but deletes the token from localstorage. Then file structure or lack there of especially on frontend side should be improved.
