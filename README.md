@@ -12,6 +12,12 @@ When updating entry data it will throw an error on screen but will most likely s
 
 ## Database
 This app uses the example database from classes [DataBase.sql](https://github.com/mattpe/hyte-web-dev/blob/main/assets/health-diary-db.sql)
+## Screen shots
+![image](https://github.com/hjalmaar/WebProjectBackend/assets/77154298/aaf50306-4570-46d7-b4d0-13255b0c462d)
+![image](https://github.com/hjalmaar/WebProjectBackend/assets/77154298/923958c0-cc24-41b9-9af0-2dcb2fc2b2c3)
+![image](https://github.com/hjalmaar/WebProjectBackend/assets/77154298/989b0227-cb28-4fe2-92b0-22e4f762450a)
+
+
 
 
 ## Resources and endpoints
