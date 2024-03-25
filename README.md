@@ -1,28 +1,25 @@
-# Hyte web dev example back-end server
+# Project
 
-**Node.js + Express** application.
+**Node.js + Express** application. Health diary application built with chat gpt and the teachers examples. Where you can register and log in. As a authorized user you can search all users but only delete logged in user. Also as an authorized user you can add diary entries, edit and delete. Same is for medication entry. In the bottom user can update their user data. In the update user will go through prompts to update their data. To note the virtual machine is in a subfolder that's why the routes go /api/api. Added route for medications with minimal authorization on server side.
 
-(Check week/feature branches too.)
 
-## Usage
+## Bugs and betterments
+When updating entry data it will throw an error on screen but will most likely still update the data. The entry table will only update when refreshing the window. The medication data should work without updating. Logout button will throw an error but deletes the token from localstorage. Then file structure or lack there of especially on frontend side should be improved.
 
-1. Clone/download code
-2. Run `npm i` inside project folder
-3. Install & start MySQL/MariaDB server
-4. Import database script(s) in `db/` folder
-5. Create `.env` file based on `.env.sample`
-6. Start the dev server: `npm run dev` / `npm start`
+## Database
+This app uses the example database from classes [DataBase.sql](https://github.com/mattpe/hyte-web-dev/blob/main/assets/health-diary-db.sql)
+
 
 ## Resources and endpoints
 
 ### `/items` (works with hard-coded mock data only, no need for db)
 
 ```http
-GET http://127.0.0.1:3000/items
-GET http://127.0.0.1:3000/items/:id
-DELETE http://127.0.0.1:3000/items/:id
+GET https://helmar.northeurope.cloudapp.azure.com/api/items
+GET https://helmar.northeurope.cloudapp.azure.com/api/items/:id
+DELETE https://helmar.northeurope.cloudapp.azure.com/api/items/:id
 
-POST http://127.0.0.1:3000/items
+POST https://helmar.northeurope.cloudapp.azure.com/api/items/items
 content-type: application/json
 body: {"name": "New Item"}
 ```
@@ -33,7 +30,7 @@ Example queries:
 
 ```http
 # Login
-POST http://localhost:3000/api/users/login
+POST https://helmar.northeurope.cloudapp.azure.com/api/api/users/login
 content-type: application/json
 {
   "username": "user",
@@ -51,19 +48,19 @@ Example queries:
 
 ```http
 # Get all users (requires token)
-GET http://127.0.0.1:3000/api/users
+GET https://helmar.northeurope.cloudapp.azure.com/api/api/users
 Authorization: Bearer <token>
 
 # Get user by id (requires token)
-GET http://127.0.0.1:3000/api/users/:id
+GET https://helmar.northeurope.cloudapp.azure.com/api/api/users/:id
 Authorization: Bearer <token>
 
 # Delete user (requires token)
-DELETE http://127.0.0.1:3000/api/users/:id
+DELETE https://helmar.northeurope.cloudapp.azure.com/api/api/users/:id
 Authorization: Bearer <token>
 
 # Create user (register)
-POST http://127.0.0.1:3000/api/users
+POST https://helmar.northeurope.cloudapp.azure.com/api/api/users
 content-type: application/json
 
 {
@@ -73,7 +70,7 @@ content-type: application/json
 }
 
 # Update user's own data (requires token)
-PUT http://127.0.0.1:3000/api/users/
+PUT https://helmar.northeurope.cloudapp.azure.com/api/api/users
 Authorization: Bearer <token>
 content-type: application/json
 
@@ -90,14 +87,14 @@ Example queries:
 
 ```http
 # Get all entries for a logged in user (requires token)
-GET http://localhost:3000/api/entries
+GET https://helmar.northeurope.cloudapp.azure.com/api/api/entries
 Authorization: Bearer <token>
 
 # Get entries by id
-GET http://localhost:3000/api/entries/:id
+GET https://helmar.northeurope.cloudapp.azure.com/api/api/entries/:id
 
 # Post entry
-POST http://localhost:3000/api/entries
+POST https://helmar.northeurope.cloudapp.azure.com/api/api/entries
 content-type: application/json
 
 {
@@ -110,7 +107,7 @@ content-type: application/json
 }
 
 # Update entry
-PUT http://localhost:3000/api/entries/:id
+PUT https://helmar.northeurope.cloudapp.azure.com/api/api/entries/:id
 content-type: application/json
 
 {
@@ -123,5 +120,46 @@ content-type: application/json
 }
 
 # Delete entry
-DELETE http://localhost:3000/api/entries/:id
+DELETE https://helmar.northeurope.cloudapp.azure.com/api/api/entries/:id
+```
+### `/api/medications`
+
+Example queries:
+
+```http
+# Get all medication details for a logged in user (requires token)
+GET https://helmar.northeurope.cloudapp.azure.com/api/api/medications
+Authorization: Bearer <token>
+
+# Get medication details by id
+GET https://helmar.northeurope.cloudapp.azure.com/api/api/medications/:id
+
+# Post medications
+POST https://helmar.northeurope.cloudapp.azure.com/api/api/medications
+content-type: application/json
+
+{
+  "name": "Ibuprofen",
+  "dosage": "400mg",
+  "frequency": "Every 8 hours",
+  "start_date": "2024-03-01",
+  "end_date": "2024-03-10",
+  "user_id": 1
+}
+
+# Update medications
+PUT https://helmar.northeurope.cloudapp.azure.com/api/api/medications/:id
+content-type: application/json
+
+{
+  "name": "Ibuprofen",
+  "dosage": "400mg",
+  "frequency": "Every 8 hours",
+  "start_date": "2024-03-01",
+  "end_date": "2024-03-10",
+  "user_id": 1
+}
+
+# Delete medications
+DELETE https://helmar.northeurope.cloudapp.azure.com/api/api/medications/:id
 ```

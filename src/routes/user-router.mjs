@@ -27,8 +27,6 @@ userRouter
    * @apiSuccess {String} user.username Username
    * @apiSuccess {String} user.user_level Userlevel of the User.
    *
-   * TODO: add example response
-   *
    * @apiUse InvalidTokenError
    */
   .get(authenticateToken, getUsers)

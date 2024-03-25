@@ -5,6 +5,7 @@ import {fileURLToPath} from 'url';
 import itemRouter from './routes/item-router.mjs';
 import userRouter from './routes/user-router.mjs';
 import entryRouter from './routes/entry-router.mjs';
+import medsRouter from './routes/meds-route.mjs';
 import cors from 'cors';
 import logger from './middlewares/logger.mjs';
 import authRouter from './routes/auth-router.mjs';
@@ -25,6 +26,7 @@ app.use(logger);
 // middleware, joka parsii pyynnössä olevan JSON-datan
 // ja lisää sen request-objektiin (req.body)
 app.use(express.json());
+
 
 // Staattinen sivusto palvelimen juureen (public-kansion sisältö näkyy osoitteessa http://127.0.0.1:3000/sivu.html)
 // Voit sijoittaa esim. valmiin client-sovelluksen tähän kansioon
@@ -48,6 +50,9 @@ app.use('/api/users', userRouter);
 
 // User authentication
 app.use('/api/auth', authRouter);
+
+// Use the medication routes
+app.use('/api/medications', medsRouter);
 
 // Default 404 not found
 app.use(notFoundHandler);
