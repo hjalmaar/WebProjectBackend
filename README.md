@@ -1,17 +1,14 @@
-# Hyte web dev example back-end server
+# Project
 
-**Node.js + Express** application.
+**Node.js + Express** application. Health diary application built with chat gpt and the teachers examples. Where you can register and log in. As a authorized user you can search all users but only delete logged in user. Also as an authorized user you can add diary entries, edit and delete. Same is for medication entry. In the bottom user can update their user data. To note the virtual machine is in a subfolder that's why the routes go /api/api. Added route for medications with minimal authorization on server side.
 
 
+## Bugs and betterments
+When updating entry data it will throw an error on screen but will most likely still update the data. The entry table will only update when refreshing the window. The medication data should work without updating. Logout button will throw an error but deletes the token from localstorage.
 
-## Usage
+## Database
+This app uses the example database from classes [DataBase.sql](https://github.com/mattpe/hyte-web-dev/blob/main/assets/health-diary-db.sql)
 
-1. Clone/download code
-2. Run `npm i` inside project folder
-3. Install & start MySQL/MariaDB server
-4. Import database script(s) in `db/` folder
-5. Create `.env` file based on `.env.sample`
-6. Start the dev server: `npm run dev` / `npm start`
 
 ## Resources and endpoints
 
@@ -33,7 +30,7 @@ Example queries:
 
 ```http
 # Login
-POST http://localhost:3000/api/users/login
+POST https://helmar.northeurope.cloudapp.azure.com/api/api/usersusers/login
 content-type: application/json
 {
   "username": "user",
